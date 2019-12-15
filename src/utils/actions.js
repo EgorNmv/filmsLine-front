@@ -1,0 +1,4 @@
+export default {
+    DROP_STATE_ON_UNAUTH: 'DROP_STATE_ON_UNAUTH',
+    SET_AUTH: 'SET_AUTH'
+}
