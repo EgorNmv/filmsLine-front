@@ -2,42 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511ed796-91db-4cfe-9713-f72e6dc354c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/authActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuthHandler/AuthHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loading/Loading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignInForm/SignInForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUpForm/SignUpForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignUp/SignUp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/authReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/endpoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/filmActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/CurrentFilm/CurrentFilm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/CurrentProducer/CurrentProducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Films/Films.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Producers/Producers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/filmReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/authActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/authActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignInForm/SignInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignInForm/SignInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUpForm/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUpForm/SignUpForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/paths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/endpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/endpoints.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../filmsline-back" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -137,12 +121,25 @@
       <option name="presentableId" value="Default" />
       <updated>1575221152464</updated>
       <workItem from="1575221154725" duration="1915000" />
-      <workItem from="1576423196243" duration="12926000" />
+      <workItem from="1576423196243" duration="13078000" />
+      <workItem from="1576516366925" duration="9673000" />
     </task>
+    <task id="LOCAL-00001" summary="added signin and signup forms">
+      <created>1576437513645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576437513645</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added signin and signup forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="added signin and signup forms" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576426933337">
@@ -153,6 +150,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1576427313849" />
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1576437511042">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576437511042" />
     <state x="23" y="187" key="EditFileWatcherDialog" timestamp="1576427783097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -161,22 +162,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576435577787" />
-    <state width="1515" height="189" key="GridCell.Tab.0.bottom" timestamp="1576428807796">
+    <state width="1515" height="189" key="GridCell.Tab.0.bottom" timestamp="1576517134059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576428807796" />
-    <state width="1515" height="189" key="GridCell.Tab.0.center" timestamp="1576428807796">
+    <state width="1515" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576517134059" />
+    <state width="1515" height="189" key="GridCell.Tab.0.center" timestamp="1576517134059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576428807796" />
-    <state width="1515" height="189" key="GridCell.Tab.0.left" timestamp="1576428807796">
+    <state width="1515" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576517134059" />
+    <state width="1515" height="189" key="GridCell.Tab.0.left" timestamp="1576517134059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576428807796" />
-    <state width="1515" height="189" key="GridCell.Tab.0.right" timestamp="1576428807796">
+    <state width="1515" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576517134059" />
+    <state width="1515" height="189" key="GridCell.Tab.0.right" timestamp="1576517134059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576428807796" />
+    <state width="1515" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576517134059" />
     <state x="463" y="17" width="609" height="789" key="find.popup" timestamp="1575227052602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -8,5 +8,9 @@ function UrlInstance(url) {
 
 export default {
     Home: new UrlInstance("/"),
-    SignUp: new UrlInstance("/registration")
+    SignUp: new UrlInstance("/registration"),
+    Films: new UrlInstance("/films"),
+    Producers: new UrlInstance("/producers"),
+    CurrentProducer: new UrlInstance("/producers/:producer_id"),
+    CurrentFilm: new UrlInstance("/films/:film_id")
 };

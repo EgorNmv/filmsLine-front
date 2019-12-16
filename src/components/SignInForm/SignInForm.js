@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,7 +11,13 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {Icon} from "@material-ui/core";
 import paths from "../../routes/paths";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
+import {connect} from "react-redux";
+import {signInUser} from "../../actions/authActions";
+
+const connectActions = {signInUser};
+
+const mapStateToProps = state => ({});
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -33,8 +39,20 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function SignInForm() {
+function SignInForm({signInUser}) {
     const classes = useStyles();
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [data, setData] = useState({});
+
+    const _signInUser = e => {
+        e.preventDefault();
+        signInUser(data);
+    };
+
+    useEffect(() => {
+        setData({username, password})
+    }, [username, password]);
 
     return (
         <Container component="main" maxWidth="xs">
@@ -46,17 +64,18 @@ export default function SignInForm() {
                 <Typography component="h1" variant="h5">
                     Sign in
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form className={classes.form} noValidate onSubmit={e => _signInUser(e)}>
                     <TextField
                         variant="outlined"
                         margin="normal"
                         required
                         fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
+                        id="username"
+                        label="Username"
+                        name="username"
+                        autoComplete="username"
                         autoFocus
+                        onChange={e => setUsername(e.target.value)}
                     />
                     <TextField
                         variant="outlined"
@@ -68,6 +87,7 @@ export default function SignInForm() {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        onChange={e => setPassword(e.target.value)}
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary"/>}
@@ -99,3 +119,10 @@ export default function SignInForm() {
         </Container>
     );
 }
+
+export default withRouter(
+    connect(
+        mapStateToProps,
+        connectActions
+    )(SignInForm)
+);

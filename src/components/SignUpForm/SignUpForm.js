@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
@@ -17,6 +17,11 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import {signUpUser} from '../../actions/authActions';
+import {connect} from "react-redux";
+
+const connectActions = {signUpUser};
+
+const mapStateToProps = state => ({});
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -38,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function SignUpForm() {
+function SignUpForm({signUpUser}) {
 
     const classes = useStyles();
     const [userName, setUserName] = useState(null);
@@ -143,3 +148,10 @@ export default function SignUpForm() {
         </Container>
     );
 }
+
+export default withRouter(
+    connect(
+        mapStateToProps,
+        connectActions
+    )(SignUpForm)
+);
