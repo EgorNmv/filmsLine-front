@@ -7,6 +7,8 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        case actions.ADD_FILM_TO_FILM_LIST:
+            return {...state, filmsList: [action.payload, ...state.filmsList]};
         case actions.SET_FILMS_LIST:
             return {...state, filmsList: action.payload};
         case actions.SET_CURRENT_FILM:

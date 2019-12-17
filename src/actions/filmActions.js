@@ -28,12 +28,30 @@ export const getFilmById = filmId => async dispatch => {
     }
 };
 
+export const postFilm = (name, description, img = null, producer, callback) => async dispatch => {
+    try {
+        const response = await axios.post(
+            endpoints.POST_CREATE_FILM, {name, description, img, producer}
+        );
+        if (response.data.status === "ok") {
+            dispatch(addFilmToFilmList(response.data.data));
+            callback();
+        }
+    } catch (e) {
+        console.error(e);
+    }
+};
+
 export const dropStateOnUnauthDispatch = () => dispatch => {
     dispatch(dropStateOnUnauth());
 };
 
 export const setFilmsListDispatch = list => dispatch => {
     dispatch(setFilmsList(list));
+};
+
+export const addFilmToFilmListDispatch = film => dispatch => {
+    dispatch(addFilmToFilmList(film));
 };
 
 const dropStateOnUnauth = () => ({type: actions.DROP_STATE_ON_UNAUTH});
@@ -46,4 +64,9 @@ const setFilmsList = list => ({
 const setCurrentFilm = film => ({
     payload: film,
     type: actions.SET_CURRENT_FILM
+});
+
+const addFilmToFilmList = film => ({
+    payload: film,
+    type: actions.ADD_FILM_TO_FILM_LIST
 });
