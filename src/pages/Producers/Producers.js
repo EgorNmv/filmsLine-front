@@ -24,9 +24,14 @@ function Producers({getAllProducers, producersList}) {
         getAllProducers();
     }, []);
 
-    return <Container component="main" className={classes.main} maxWidth="sm">
+    return <Container component="main" className={classes.main} maxWidth="sm" style={{paddingTop: 50}}>
+        <span style={{fontSize: 30, fontWeight: 500}}>Producers</span>
         {producersList.length > 0 ? <div
-            style={{paddingTop: 50, display: "flex", width: "100%", flexDirection: "column"}}>{producersList.map(producer => (
+            style={{
+                display: "flex",
+                width: "100%",
+                flexDirection: "column"
+            }}>{producersList.map(producer => (
             <Link to={paths.CurrentProducer.toPath({producer_id: producer._id})} key={producer._id}>
                 <div
                     style={{

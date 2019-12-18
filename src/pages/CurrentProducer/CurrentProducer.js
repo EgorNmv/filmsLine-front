@@ -29,8 +29,14 @@ function CurrentProducer({
     }, []);
 
     return <Container component="main" className={classes.main} maxWidth="sm" style={{paddingTop: 50}}>
-        <div>{currentProducer.username}</div>
-        <div>{currentProducer.films && currentProducer.films.length > 0 && (currentProducer.films.map(film => (
+        <div style={{
+            textAlign: "center",
+            fontSize: 30,
+            fontWeight: 500,
+            paddingTop: 20
+        }}>{currentProducer.username}</div>
+        <div style={{paddingTop: 20}}>
+            <span>Films:</span> {currentProducer.films && currentProducer.films.length > 0 && (currentProducer.films.map(film => (
             <Link to={paths.CurrentFilm.toPath({film_id: film.film_id})} key={film.film_id}>
                 <div
                     style={{

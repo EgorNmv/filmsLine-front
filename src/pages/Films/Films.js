@@ -20,15 +20,19 @@ const connectActions = {getAllFilms, postFilm};
 const mapStateToProps = state => ({
     filmsList: state.film.filmsList,
     userType: state.auth.user.type,
-    userName: state.auth.user.username
+    userName: state.auth.user.username,
+    userId: state.auth.user._id,
+    userFilms: state.auth.user && state.auth.user.films
 });
 
-function Films({getAllFilms, filmsList, userType, postFilm, userName}) {
+function Films({getAllFilms, filmsList, userType, postFilm, userName, userId, userFilms}) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [name, setName] = useState(null);
     const [description, setDescription] = useState(null);
     const [img, setImg] = useState(null);
+    const [rentalStart, setRentalStart] = useState(null);
+    const [rentalEnd, setRentalEnd] = useState(null);
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -37,13 +41,21 @@ function Films({getAllFilms, filmsList, userType, postFilm, userName}) {
     };
     const _postFilm = (e) => {
         e.preventDefault();
-        postFilm(name, description, img, userName, handleClose);
+        postFilm(name, description, img, userName, userId, handleClose, rentalStart, rentalEnd);
     };
     useEffect(() => {
         getAllFilms();
     }, []);
 
     return <Container component="main" className={classes.main} maxWidth="sm" style={{paddingTop: 50}}>
+        <span style={{fontSize: 30, fontWeight: 500}}>Films</span>
+        {userFilms.length > 0 && (
+            <div style={{paddingBottom: 10}}>
+                <span style={{
+                    fontSize: 20,
+                    fontWeight: 300
+                }}>My films: {userFilms.map(film => (film.film_name + "; "))}</span>
+            </div>)}
         {userType === 1 && (
             <div>
                 <Button
@@ -64,12 +76,16 @@ function Films({getAllFilms, filmsList, userType, postFilm, userName}) {
                         Add new film
                     </DialogTitle>
                     <DialogContent style={{display: "flex", flexDirection: "column"}}>
-                        <TextField label="Film name" style={{paddingBottom: 20}}
+                        <TextField label="Film name*" style={{paddingBottom: 20}}
                                    onChange={e => setName(e.target.value)}/>
-                        <TextField label="Film description" style={{paddingBottom: 20}}
+                        <TextField label="Film description*" style={{paddingBottom: 20}}
                                    onChange={e => setDescription(e.target.value)}/>
-                        <TextField label="Link to film poster"
+                        <TextField label="Link to film poster*" style={{paddingBottom: 20}}
                                    onChange={e => setImg(e.target.value)}/>
+                        <TextField label="Rental start" style={{paddingBottom: 20}}
+                                   onChange={e => setRentalStart(e.target.value)}/>
+                        <TextField label="Rental end"
+                                   onChange={e => setRentalEnd(e.target.value)}/>
                     </DialogContent>
                     <DialogActions>
                         <Button
@@ -83,6 +99,7 @@ function Films({getAllFilms, filmsList, userType, postFilm, userName}) {
                             variant="contained"
                             color="primary"
                             onClick={e => _postFilm(e)}
+                            disabled={!name || !description || !img}
                         >
                             Add
                         </Button>

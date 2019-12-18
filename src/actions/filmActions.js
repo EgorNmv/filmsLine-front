@@ -1,6 +1,7 @@
 import actions from "../utils/actions";
 import endpoints from "../utils/endpoints"
 import axios from "axios";
+import {setUserDispatch} from "../actions/authActions";
 
 export const getAllFilms = () => async dispatch => {
     try {
@@ -28,14 +29,32 @@ export const getFilmById = filmId => async dispatch => {
     }
 };
 
-export const postFilm = (name, description, img = null, producer, callback) => async dispatch => {
+export const postFilm = (name, description, img = null, producer_name, producer_id, callback, rentalStart, rentalEnd) => async dispatch => {
     try {
         const response = await axios.post(
-            endpoints.POST_CREATE_FILM, {name, description, img, producer}
+            endpoints.POST_CREATE_FILM, {
+                name,
+                description,
+                img,
+                producer_name,
+                producer_id,
+                start_rental: rentalStart,
+                end_rental: rentalEnd
+            }
         );
         if (response.data.status === "ok") {
-            dispatch(addFilmToFilmList(response.data.data));
-            callback();
+            const film = response.data.data;
+            const response1 = await axios.post(endpoints.POST_FILM_TO_USER_FILMS_LIST, {
+                userId: producer_id,
+                film_name: film.name,
+                film_id: film._id
+            });
+            if (response1.data.status === "ok") {
+                dispatch(addFilmToFilmList(response.data.data));
+                dispatch(setUserDispatch(response1.data.data));
+                callback();
+            }
+
         }
     } catch (e) {
         console.error(e);

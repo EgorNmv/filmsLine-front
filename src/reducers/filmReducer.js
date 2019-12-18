@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
         case actions.DELETE_FILM_FROM_FILM_FIST:
             return {...state, filmsList: state.filmsList.filter(film => film._id !== action.payload)};
         case actions.ADD_FILM_TO_FILM_LIST:
-            return {...state, filmsList: [action.payload, ...state.filmsList]};
+            return {...state, filmsList: [...state.filmsList, action.payload]};
         case actions.SET_FILMS_LIST:
             return {...state, filmsList: action.payload};
         case actions.SET_CURRENT_FILM:

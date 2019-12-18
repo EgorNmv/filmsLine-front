@@ -43,6 +43,7 @@ export const signInUser = ({username, password}) => async dispatch => {
 };
 
 export const dropStateOnUnauthDispatch = () => dispatch => {
+    dispatch(push(paths.Home.toPath()));
     dispatch(dropStateOnUnauth());
 };
 

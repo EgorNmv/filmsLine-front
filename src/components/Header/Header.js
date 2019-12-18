@@ -3,7 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {Button, IconButton, Icon} from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import {Link, withRouter} from "react-router-dom";
 import paths from "../../routes/paths";
 import {connect} from "react-redux";
@@ -17,9 +17,6 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
     title: {
         flexGrow: 1,
     },
@@ -32,9 +29,6 @@ function ButtonAppBar({isSignedIn, dropStateOnUnauthDispatch}) {
         <div className={classes.root}>
             <AppBar position="fixed">
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <Icon>menu</Icon>
-                    </IconButton>
                     <Typography variant="h6" className={classes.title}>
                         Films Line
                     </Typography>
