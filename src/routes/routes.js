@@ -8,6 +8,7 @@ import Films from "../pages/Films/Films";
 import Producers from "../pages/Producers/Producers";
 import CurrentFilm from "../pages/CurrentFilm/CurrentFilm";
 import CurrentProducer from "../pages/CurrentProducer/CurrentProducer";
+import Admin from "../pages/Admin/Admin";
 
 export default () => (
     <Switch>
@@ -17,6 +18,7 @@ export default () => (
         <Route exact path={paths.Producers.url} component={Producers}/>
         <Route exact path={paths.CurrentFilm.url} component={CurrentFilm}/>
         <Route exact path={paths.CurrentProducer.url} component={CurrentProducer}/>
+        <Route exact path={paths.Admin.url} component={Admin}/>
         <Route component={NotFoundPage}/>
     </Switch>
 );

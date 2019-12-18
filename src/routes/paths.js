@@ -12,5 +12,6 @@ export default {
     Films: new UrlInstance("/films"),
     Producers: new UrlInstance("/producers"),
     CurrentProducer: new UrlInstance("/producers/:producer_id"),
-    CurrentFilm: new UrlInstance("/films/:film_id")
+    CurrentFilm: new UrlInstance("/films/:film_id"),
+    Admin: new UrlInstance("/admin")
 };

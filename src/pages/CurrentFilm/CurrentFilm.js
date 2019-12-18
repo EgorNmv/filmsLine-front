@@ -1,10 +1,8 @@
-import React, {useEffect, useState} from "react";
-import SignInForm from "../../components/SignInForm/SignInForm";
-import {Link, withRouter} from "react-router-dom";
+import React, {useEffect} from "react";
+import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import Container from "@material-ui/core/Container";
 import {makeStyles} from '@material-ui/core/styles';
-import paths from "../../routes/paths";
 import {getFilmById} from "../../actions/filmActions";
 
 const useStyles = makeStyles(theme => ({

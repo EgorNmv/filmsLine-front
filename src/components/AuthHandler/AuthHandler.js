@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import paths from "../../routes/paths";
@@ -11,8 +11,9 @@ const mapStateToProps = state => ({isSignedIn: state.auth.isSignedIn});
 function AuthHandler({isSignedIn, children, history, location: {pathname}}) {
     const isHomePage = !isSignedIn && pathname === paths.Home.url;
     const isSignUpPage = !isSignedIn && pathname === paths.SignUp.url;
+    const isAdminPage = !isSignedIn && pathname === paths.Admin.url;
 
-    if (isSignedIn || isHomePage || isSignUpPage) {
+    if (isSignedIn || isHomePage || isSignUpPage || isAdminPage) {
         return children
     } else {
         return <Loading/>

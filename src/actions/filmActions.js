@@ -42,6 +42,18 @@ export const postFilm = (name, description, img = null, producer, callback) => a
     }
 };
 
+export const deleteFilmById = filmId => async dispatch => {
+    try {
+        const response = await axios.delete(`${endpoints.DELETE_FILM_BY_ID}${filmId}`);
+        if (response.data.status === "ok") {
+            dispatch(deleteFilm(filmId));
+        }
+    } catch (e) {
+        console.error(e);
+    }
+};
+
+
 export const dropStateOnUnauthDispatch = () => dispatch => {
     dispatch(dropStateOnUnauth());
 };
@@ -69,4 +81,9 @@ const setCurrentFilm = film => ({
 const addFilmToFilmList = film => ({
     payload: film,
     type: actions.ADD_FILM_TO_FILM_LIST
+});
+
+const deleteFilm = filmId => ({
+    payload: filmId,
+    type: actions.DELETE_FILM_FROM_FILM_FIST
 });
